@@ -1,0 +1,153 @@
+* {
+    font-family: "Times New Roman", serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+nav {
+    background-color: #ddd;
+    text-align: center;
+    font-size: 18px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+}
+
+td {
+    text-align: center;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    font-size: 14px;
+}
+
+h1, h2 {
+    color: darkblue;
+    text-align: center;
+}
+
+.px-text {
+    font-size: 20px;
+}
+
+.cm-box {
+    width: 6cm;
+    height: 2cm;
+    background-color: lightgray;
+}
+
+.percent-box {
+    width: 60%;
+    background-color: lightblue;
+}
+
+.em-text {
+    font-size: 2em;
+}
+
+.rem-text {
+    font-size: 1.5rem;
+}
+
+.vh-box {
+    height: 25vh;
+    background-color: lightgreen;
+}
+
+.units-section {
+    margin: 2cm;
+    padding: 2em;
+}
+
+div p {
+    color: purple;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 40%;
+}
+
+a:hover {
+    color: red;
+}
+
+input:focus {
+    border: 3px solid blue;
+}
+
+button:active {
+    background-color: green;
+    color: white;
+}
+
+.box1 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+    background-color: lightcoral;
+}
+
+.box2 {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+    background-color: lightseagreen;
+    box-sizing: border-box;
+}
+
+.box3 {
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    border: 5px dashed black;
+    margin: 40px;
+    background-color: lightgoldenrodyellow;
+}
+
+.block {
+    display: block;
+    background-color: pink;
+    margin: 10px;
+}
+
+.inline {
+    display: inline;
+    background-color: yellow;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    background-color: orange;
+    margin-left: 10px;
+}
+
+.none {
+    display: none;
+}
+
+.hidden {
+    visibility: hidden;
+    background-color: red;
+}

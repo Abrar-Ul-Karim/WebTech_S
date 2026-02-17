@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Profile - Abrar Ul Karim</title>
+    <meta name="description" content="Personal academic profile page for internship and academic review.">
+    <meta name="keywords" content="Academic Profile, Student, Education, Internship, HTML5">
+    <meta name="author" content="Abrar Ul Karim">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Abrar Ul Karim</h1>
+
+        <nav>
+            <a href="#bio">Biography</a> |
+            <a href="#education">Education</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Biography Section -->
+        <section id="bio">
+            <h2>Biography</h2>
+            <p>
+                I am a Computer Science student interested in web development,
+                software engineering, and internship opportunities.
+            </p>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+
+            <table border="1">
+                <caption>Educational Qualifications</caption>
+
+                <thead>
+                    <tr>
+                        <th>Degree</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>BSc in CSE</td>
+                        <td>American International University-Bangladesh</td>
+                        <td>2021 - Present</td>
+                        <td>CGPA 3.75</td>
+                    </tr>
+
+                    <tr>
+                        <td>HSC</td>
+                        <td>XYZ College</td>
+                        <td>2020</td>
+                        <td>GPA 5.00</td>
+                    </tr>
+
+                    <tr>
+                        <td>SSC</td>
+                        <td>ABC School</td>
+                        <td>2018</td>
+                        <td>GPA 5.00</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Form</h2>
+
+            <form>
+
+                <p>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"
+                        placeholder="Enter your full name"
+                        maxlength="50"
+                        required>
+                </p>
+
+                <p>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"
+                        placeholder="Enter your email"
+                        required>
+                </p>
+
+                <p>
+                    <label for="phone">Phone:</label><br>
+                    <input type="tel" id="phone" name="phone"
+                        placeholder="01XXXXXXXXX"
+                        pattern="[0-9]{11}"
+                        maxlength="11">
+                </p>
+
+                <p>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message"
+                        placeholder="Write your message here"
+                        maxlength="300"
+                        required></textarea>
+                </p>
+
+                <p>
+                    <input type="submit" value="Submit">
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact: abrar@example.com</p>
+        <p>&copy; 2026 Abrar Ul Karim</p>
+    </footer>
+
+</body>
+</html>
