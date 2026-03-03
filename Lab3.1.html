@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Task 03</title>
+</head>
+<body>
+
+<h2>Lab Task 03: Arrays and Objects</h2>
+
+<script>
+
+var courses = ["Web Tech", "Data Structure", "Algorithm", "Database", "OS"];
+
+document.write("<h3>Course List:</h3>");
+for (var i = 0; i < courses.length; i++) {
+    document.write(courses[i] + "<br>");
+}
+
+courses.push("Computer Network");
+
+document.write("<h3>After Adding New Course:</h3>");
+for (var i = 0; i < courses.length; i++) {
+    document.write(courses[i] + "<br>");
+}
+
+document.write("<h3>Array Operations:</h3>");
+document.write("Length: " + courses.length + "<br>");
+
+courses.pop();
+courses.unshift("Artificial Intelligence");
+
+document.write("<h3>Final Array:</h3>");
+for (var i = 0; i < courses.length; i++) {
+    document.write(courses[i] + "<br>");
+}
+
+var student = {
+    name: "Abrar",
+    id: "22-12345-1",
+    department: "CSE",
+    cgpa: 3.75
+};
+
+document.write("<h3>Student Info:</h3>");
+document.write("Name: " + student.name + "<br>");
+document.write("ID: " + student.id + "<br>");
+document.write("Department: " + student.department + "<br>");
+document.write("CGPA: " + student.cgpa + "<br>");
+
+var students = [
+    {name: "Rahim", id: "1", department: "CSE", cgpa: 3.50},
+    {name: "Karim", id: "2", department: "CSE", cgpa: 3.60},
+    {name: "Jannat", id: "3", department: "CSE", cgpa: 3.80}
+];
+
+document.write("<h3>All Students:</h3>");
+
+for (var i = 0; i < students.length; i++) {
+    document.write("Name: " + students[i].name + "<br>");
+    document.write("ID: " + students[i].id + "<br>");
+    document.write("Department: " + students[i].department + "<br>");
+    document.write("CGPA: " + students[i].cgpa + "<br><br>");
+}
+
+</script>
+
+</body>
+</html>
