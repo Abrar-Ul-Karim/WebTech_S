@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student List</title>
+
+    <style>
+        li {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid black;
+        }
+
+        .present {
+            background-color: lightgreen;
+        }
+
+        .highlight {
+            border: 3px solid red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Student Manager</h2>
+
+    <!-- Search -->
+    <input type="text" id="searchBox" placeholder="Search student">
+
+    <br><br>
+
+    <!-- Name and Roll -->
+    <input type="text" id="nameInput" placeholder="Student Name">
+    <input type="number" id="rollInput" placeholder="Roll No">
+
+    <button id="addBtn" disabled>Add</button>
+    <button onclick="sortStudents()">Sort A-Z</button>
+    <button onclick="highlightFirst()">Highlight First Student</button>
+
+    <ul id="studentList"></ul>
+
+    <p id="total">Total students: 0</p>
+
+    <p id="attendance">Present: 0, Absent: 0</p>
+
+    <script>
+
+        let list = document.getElementById("studentList");
+        let nameInput = document.getElementById("nameInput");
+        let rollInput = document.getElementById("rollInput");
+        let addBtn = document.getElementById("addBtn");
+        let searchBox = document.getElementById("searchBox");
+
+
+        // Enable / Disable Add Button
+        nameInput.addEventListener("input", function () {
+
+            if (nameInput.value.trim() == "")
+                addBtn.disabled = true;
+            else
+                addBtn.disabled = false;
+
+        });
+
+
+        // Add Student
+        addBtn.onclick = function () {
+
+            let name = nameInput.value;
+            let roll = rollInput.value;
+
+            let li = document.createElement("li");
+
+            li.innerHTML = roll + " - " + name +
+                ' <input type="checkbox" class="presentCheck"> Present ' +
+                '<button class="edit">Edit</button> ' +
+                '<button class="delete">Delete</button>';
+
+            list.appendChild(li);
+
+            nameInput.value = "";
+            rollInput.value = "";
+
+            addBtn.disabled = true;
+
+            updateTotal();
+            updateAttendance();
+
+        }
+
+
+
+        // Delete Student
+        list.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("delete")) {
+
+                if (confirm("Are you sure you want to delete this student?")) {
+
+                    e.target.parentElement.remove();
+                    updateTotal();
+                    updateAttendance();
+
+                }
+
+            }
+
+        });
+
+
+
+        // Edit Student
+        list.addEventListener("click", function (e) {
+
+            if (e.target.classList.contains("edit")) {
+
+                let li = e.target.parentElement;
+
+                let text = li.firstChild.textContent;
+
+                let parts = text.split(" - ");
+
+                let newRoll = prompt("Edit Roll", parts[0]);
+                let newName = prompt("Edit Name", parts[1]);
+
+                if (newRoll && newName) {
+
+                    li.childNodes[0].textContent = newRoll + " - " + newName;
+
+                }
+
+            }
+
+        });
+
+
+
+
+        // Present Checkbox
+        list.addEventListener("change", function (e) {
+
+            if (e.target.classList.contains("presentCheck")) {
+
+                let li = e.target.parentElement;
+
+                if (e.target.checked)
+                    li.classList.add("present");
+                else
+                    li.classList.remove("present");
+
+                updateAttendance();
+
+            }
+
+        });
+
+
+
+        // Update total students
+        function updateTotal() {
+
+            let count = list.children.length;
+
+            document.getElementById("total").innerText =
+                "Total students: " + count;
+
+        }
+
+
+
+        // Update attendance
+        function updateAttendance() {
+
+            let checks = document.querySelectorAll(".presentCheck");
+
+            let present = 0;
+
+            checks.forEach(function (c) {
+
+                if (c.checked) present++;
+
+            });
+
+            let absent = checks.length - present;
+
+            document.getElementById("attendance").innerText =
+                "Present: " + present + " , Absent: " + absent;
+
+        }
+
+
+
+        // Search student
+        searchBox.addEventListener("input", function () {
+
+            let text = searchBox.value.toLowerCase();
+
+            let items = list.getElementsByTagName("li");
+
+            for (let i = 0; i < items.length; i++) {
+
+                let name = items[i].textContent.toLowerCase();
+
+                if (name.includes(text))
+                    items[i].style.display = "block";
+                else
+                    items[i].style.display = "none";
+
+            }
+
+        });
+
+
+
+
+        // Sort Students
+        function sortStudents() {
+
+            let items = Array.from(list.children);
+
+            items.sort(function (a, b) {
+
+                let nameA = a.textContent.toLowerCase();
+                let nameB = b.textContent.toLowerCase();
+
+                return nameA.localeCompare(nameB);
+
+            });
+
+            items.forEach(function (li) {
+
+                list.appendChild(li);
+
+            });
+
+        }
+
+
+
+        // Highlight First Student
+        function highlightFirst() {
+
+            let items = list.children;
+
+            for (let i = 0; i < items.length; i++)
+                items[i].classList.remove("highlight");
+
+            if (items.length > 0)
+                items[0].classList.add("highlight");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
