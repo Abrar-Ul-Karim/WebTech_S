@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        #mainTitle {
+            color: darkblue;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: darkgreen;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+
+        .highlight {
+            background-color: lightyellow;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 id="mainTitle">University Student Portal</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a> |
+    <a href="#students">Students</a> |
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+<section>
+    <h2>Student Information Table</h2>
+
+    <table border="1">
+        <caption class="highlight">List of Students and Academic Records</caption>
+
+        <tr>
+            <th scope="col">Student ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">CGPA</th>
+        </tr>
+
+        <tr>
+            <td>23-54370-3</td>
+            <td class="highlight">Abrar Ul Karim</td>
+            <td>CSE</td>
+            <td>3.84</td>
+        </tr>
+
+        <tr>
+            <td>23-76677-3</td>
+            <td>Rakib Hasan</td>
+            <td>EEE</td>
+            <td>3.70</td>
+        </tr>
+
+        <tr>
+            <td>22-53003-1</td>
+            <td>Rahim Ahmed</td>
+            <td>ICE</td>
+            <td>3.60</td>
+        </tr>
+
+        <tr>
+            <td>23-61004-2</td>
+            <td>Nusrat Jahan</td>
+            <td>BBA</td>
+            <td>3.90</td>
+        </tr>
+
+    </table>
+
+    <!-- Inline CSS -->
+    <p style="color: red; text-align: center; font-size: 16px;">
+        This is a demo paragraph styled using Inline CSS.
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 University Portal | All rights reserved.</p>
+</footer>
+
+</body>
+</html>

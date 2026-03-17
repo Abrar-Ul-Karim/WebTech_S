@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 02</title>
+</head>
+<body>
+
+<h2>Lab Task 02</h2>
+
+<div id="output"></div>
+<button onclick="checkLength()">Check String Length</button>
+
+<script>
+
+function add(x, y) {
+    return x + y;
+}
+
+var total = add(12, 18);
+document.getElementById("output").innerHTML +=
+"<p>Total: " + total + "</p>";
+
+document.getElementById("output").innerHTML +=
+"<p>1 to 10:</p>";
+
+for (var i = 1; i <= 10; i++) {
+    document.getElementById("output").innerHTML += i + " ";
+}
+
+document.getElementById("output").innerHTML +=
+"<p><br>Even Numbers 1-20:</p>";
+
+var n = 2;
+while (n <= 20) {
+    document.getElementById("output").innerHTML += n + " ";
+    n += 2;
+}
+
+var name = "Abrar Ul Karim";
+
+document.getElementById("output").innerHTML +=
+"<p><br>Original: " + name + "</p>" +
+"<p>Uppercase: " + name.toUpperCase() + "</p>" +
+"<p>Length: " + name.length + "</p>" +
+"<p>First Name: " + name.split(" ")[0] + "</p>";
+
+function checkLength() {
+    var str = prompt("Enter a string");
+    if (str.length > 5) {
+        alert("Length greater than 5");
+    } else {
+        alert("Length 5 or less");
+    }
+}
+
+</script>
+
+</body>
+</html>
