@@ -1,0 +1,72 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: white;
+    color: black;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+#projectContainer {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.dark {
+    background: #121212;
+    color: white;
+}
+
+
+#topBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+
+@media(max-width: 768px) {
+    #projectContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+}

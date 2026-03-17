@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>Abrar</h2>
+            <button id="modeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME -->
+        <section id="home">
+            <h1>Abrar Ul Karim</h1>
+            <p>Developer | Student</p>
+            <p>I am a computer science student who enjoys solving problems and developing web projects.</p>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div id="projectContainer"></div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <form id="contactForm">
+
+                <input type="text" id="name" placeholder="Name">
+                <span class="error" id="nameError"></span>
+
+                <input type="email" id="email" placeholder="Email">
+                <span class="error" id="emailError"></span>
+
+                <input type="text" id="subject" placeholder="Subject">
+                <span class="error" id="subjectError"></span>
+
+                <textarea id="message" placeholder="Message"></textarea>
+                <span class="error" id="messageError"></span>
+
+                <button type="submit">Send</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <button id="topBtn">⬆</button>
+
+    <footer>
+        <p>© 2026 Abrar</p>
+    </footer>
+
+    <script src="Logic.js"></script>
+
+</body>
+
+</html>
