@@ -1,27 +1,17 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['user_name'])) {
     header("Location: login.php");
     exit();
 }
 
-$user = $_SESSION['user'];
+$name = $_SESSION['user_name'];
+$last_login = isset($_COOKIE['last_login']) ? $_COOKIE['last_login'] : "First login!";
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard</title>
-</head>
-<body>
+<h2>Welcome, <?php echo $name; ?> 🎉</h2>
 
-<h2>Welcome, <?php echo $user; ?></h2>
-
-<p>You are successfully logged in.</p>
+<p>Last Login Time: <?php echo $last_login; ?></p>
 
 <a href="logout.php">Logout</a>
-
-</body>
-</html>
-
