@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Info Fetch</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            width: 300px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Information System</h2>
+
+    <button onclick="getStudentData()">Fetch Student Info</button>
+
+    <div id="output"></div>
+
+    <script>
+        function getStudentData() {
+            let xhr = new XMLHttpRequest();
+
+            xhr.open("GET", "student.php", true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    
+                    let student = JSON.parse(xhr.responseText);
+
+                    document.getElementById("output").innerHTML =
+                        "<h3>Student Details</h3>" +
+                        "<p><strong>Name:</strong> " + student.name + "</p>" +
+                        "<p><strong>ID:</strong> " + student.id + "</p>" +
+                        "<p><strong>Department:</strong> " + student.department + "</p>" +
+                        "<p><strong>CGPA:</strong> " + student.cgpa + "</p>";
+                }
+            };
+
+            xhr.send();
+        }
+    </script>
+
+</body>
+</html>
+
