@@ -1,0 +1,19 @@
+body {
+    font-family: Arial;
+    margin: 30px;
+}
+
+input, select, button {
+    padding: 8px;
+    margin: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
